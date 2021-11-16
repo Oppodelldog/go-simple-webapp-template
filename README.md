@@ -17,19 +17,8 @@ As router I chosse the gorilla.mux, which is pretty famous.
 It is easy to use, allows short, expressive configuration and has
 good regular expression support for route parameters.
 
-## Compiling Assets (statics)
-For compiling assets into the binary there are a lot of libraries.
-
-The method is not complicated:
-* convert the binaries into go files
-* make those files act as a filesystem (http.Dir)
-
-I choose **statics** from the go playground, which seemed to be
-the most flexible or straight forward one to me.
-
-Check out the others if you like.
-This page is dedicated to that topic:
-(https://tech.townsourced.com/post/embedding-static-files-in-go/)
+## Assets
+Assets are embedded into the built binary at compile time using go standard library package "embed".
 
 ## Logging (logrus)
 The reasons for logrus are pretty straight forward.
