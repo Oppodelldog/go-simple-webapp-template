@@ -16,9 +16,9 @@ func NewRouter() http.Handler {
 	m := mux.NewRouter()
 	m.HandleFunc(RouteIndex, indexHandler).Methods(http.MethodGet)
 
-	m.PathPrefix("/css/").Handler(http.FileServer(assets.Styles.FS())).Methods(http.MethodGet)
-	m.PathPrefix("/icons/").Handler(http.FileServer(assets.Icons.FS())).Methods(http.MethodGet)
-	m.PathPrefix("/js/").Handler(http.FileServer(assets.Javascript.FS())).Methods(http.MethodGet)
+	m.PathPrefix("/css/").Handler(http.FileServer(http.FS(assets.Styles))).Methods(http.MethodGet)
+	m.PathPrefix("/icons/").Handler(http.FileServer(http.FS(assets.Icons))).Methods(http.MethodGet)
+	m.PathPrefix("/js/").Handler(http.FileServer(http.FS(assets.Javascript))).Methods(http.MethodGet)
 
 	m.PathPrefix("/").HandlerFunc(catchAll).Methods(http.MethodGet)
 	return m

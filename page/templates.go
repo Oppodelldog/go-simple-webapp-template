@@ -7,8 +7,7 @@ import (
 	"path/filepath"
 )
 
-// (has a leading slash to work with static assets libray)
-const templatesBasePath = "/templates"
+const templatesBasePath = "templates"
 
 func getPartials() []string {
 
