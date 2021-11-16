@@ -26,14 +26,11 @@ I like it ...it has colors ... sometimes.... and ... it's used by docker!! ;-)
 No, seriously. I've seen it can be used in production for logging to syslog,logstash and more.
 
 ## Getting started
-You should install statics locally to be able to build. 
-* install ```go get -u github.com/go-playground/statics```
-* then call ```make build```
-* You will find the binary in **.build-assets**
+* call ```make build```
+* You will find the server binary in **.build-assets**
 
 ### local dev
 For local development I suggest to use the **.env** file
 which sets the assets to be load from local filesystem instead
-of lokking in the generated go files. Sure, since you don't want
-to generate assets each time you tweaked your templates.
+of looking in the generated go files. 
 
